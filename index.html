@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa de Java - Aprende Java desde Cero</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M16 2L4 8v16l12 6 12-6V8L16 2z" fill="#E63946" stroke="#fff" stroke-width="2"/>
+                </svg>
+                <span>Java Complete</span>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-btn" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar..." aria-label="Buscar en la guía">
+                <span class="search-icon">⌘ K</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <button class="nav-section-title active" data-section="intro">
+                        <span>Introducción</span>
+                        <span class="chevron">›</span>
+                    </button>
+                    <ul class="nav-items active">
+                        <li><a href="#que-es-java" class="nav-link">¿Qué es Java?</a></li>
+                        <li><a href="#instalacion" class="nav-link">Instalación</a></li>
+                        <li><a href="#primer-programa" class="nav-link">Primer Programa</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <button class="nav-section-title" data-section="fundamentos">
+                        <span>Fundamentos</span>
+                        <span class="chevron">›</span>
+                    </button>
+                    <ul class="nav-items">
+                        <li><a href="#variables" class="nav-link">Variables y Tipos</a></li>
+                        <li><a href="#operadores" class="nav-link">Operadores</a></li>
+                        <li><a href="#control-flujo" class="nav-link">Control de Flujo</a></li>
+                        <li><a href="#arrays" class="nav-link">Arrays</a></li>
+                        <li><a href="#strings" class="nav-link">Strings</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <button class="nav-section-title" data-section="poo">
+                        <span>Programación Orientada a Objetos</span>
+                        <span class="chevron">›</span>
+                    </button>
+                    <ul class="nav-items">
+                        <li><a href="#clases-objetos" class="nav-link">Clases y Objetos</a></li>
+                        <li><a href="#herencia" class="nav-link">Herencia</a></li>
+                        <li><a href="#polimorfismo" class="nav-link">Polimorfismo</a></li>
+                        <li><a href="#encapsulamiento" class="nav-link">Encapsulamiento</a></li>
+                        <li><a href="#abstraccion" class="nav-link">Abstracción</a></li>
+                        <li><a href="#interfaces" class="nav-link">Interfaces</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <button class="nav-section-title" data-section="avanzado">
+                        <span>Temas Avanzados</span>
+                        <span class="chevron">›</span>
+                    </button>
+                    <ul class="nav-items">
+                        <li><a href="#colecciones" class="nav-link">Colecciones</a></li>
+                        <li><a href="#excepciones" class="nav-link">Excepciones</a></li>
+                        <li><a href="#streams" class="nav-link">Streams API</a></li>
+                        <li><a href="#multithreading" class="nav-link">Multithreading</a></li>
+                        <li><a href="#lambda" class="nav-link">Expresiones Lambda</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content" id="content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1 class="hero-title">Guía Completa de Java</h1>
+                <p class="hero-subtitle">Aprende Java desde los fundamentos hasta conceptos avanzados con ejemplos prácticos y código interactivo</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value">20+</div>
+                        <div class="stat-label">Capítulos</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">100+</div>
+                        <div class="stat-label">Ejemplos</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">Gratis</div>
+                        <div class="stat-label">100%</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Introducción -->
+            <article id="que-es-java" class="section">
+                <h2 class="section-title">¿Qué es Java?</h2>
+                <div class="content-block">
+                    <p>Java es un lenguaje de programación de alto nivel, orientado a objetos y de propósito general. Fue desarrollado por Sun Microsystems (ahora Oracle) en 1995. Java es conocido por su filosofía "Write Once, Run Anywhere" (WORA), lo que significa que el código compilado puede ejecutarse en cualquier plataforma que soporte Java sin necesidad de recompilación.</p>
+                    
+                    <div class="info-box">
+                        <div class="info-box-title">💡 Características principales</div>
+                        <ul>
+                            <li><strong>Independiente de plataforma:</strong> El código se ejecuta en la JVM (Java Virtual Machine)</li>
+                            <li><strong>Orientado a objetos:</strong> Todo en Java es un objeto</li>
+                            <li><strong>Seguro:</strong> Proporciona un entorno seguro para ejecutar aplicaciones</li>
+                            <li><strong>Multihilo:</strong> Soporta programación concurrente</li>
+                            <li><strong>Robusto:</strong> Gestión automática de memoria y manejo de excepciones</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <article id="instalacion" class="section">
+                <h2 class="section-title">Instalación del JDK</h2>
+                <div class="content-block">
+                    <p>Para programar en Java, necesitas instalar el JDK (Java Development Kit).</p>
+                    
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Descargar el JDK</h3>
+                                <p>Visita <a href="https://www.oracle.com/java/technologies/downloads/" target="_blank">oracle.com/java</a> y descarga la última versión del JDK</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Instalar el JDK</h3>
+                                <p>Ejecuta el instalador y sigue las instrucciones en pantalla</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Verificar la instalación</h3>
+                                <p>Abre una terminal y ejecuta:</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span class="code-language">bash</span>
+                                        <button class="copy-btn" data-code="java -version">Copiar</button>
+                                    </div>
+                                    <pre><code>java -version</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article id="primer-programa" class="section">
+                <h2 class="section-title">Tu Primer Programa en Java</h2>
+                <div class="content-block">
+                    <p>Vamos a crear el clásico programa "Hola Mundo".</p>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn" data-code="public class HolaMundo {
+    public static void main(String[] args) {
+        System.out.println(&quot;¡Hola, Mundo!&quot;);
+    }
+}">Copiar</button>
+                        </div>
+                        <pre><code><span class="keyword">public class</span> <span class="class-name">HolaMundo</span> {
+    <span class="keyword">public static void</span> <span class="function">main</span>(<span class="class-name">String</span>[] args) {
+        <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"¡Hola, Mundo!"</span>);
+    }
+}</code></pre>
+                    </div>
+
+                    <div class="explanation-box">
+                        <h4>Explicación del código:</h4>
+                        <ul>
+                            <li><code>public class HolaMundo</code> - Declara una clase pública llamada HolaMundo</li>
+                            <li><code>public static void main(String[] args)</code> - El punto de entrada del programa</li>
+                            <li><code>System.out.println()</code> - Imprime texto en la consola</li>
+                        </ul>
+                    </div>
+
+                    <div class="terminal-output">
+                        <div class="terminal-header">Salida del programa</div>
+                        <div class="terminal-body">¡Hola, Mundo!</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Variables y Tipos -->
+            <article id="variables" class="section">
+                <h2 class="section-title">Variables y Tipos de Datos</h2>
+                <div class="content-block">
+                    <p>Java es un lenguaje fuertemente tipado. Cada variable debe tener un tipo de dato declarado.</p>
+
+                    <h3 class="subsection-title">Tipos Primitivos</h3>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tipo</th>
+                                    <th>Tamaño</th>
+                                    <th>Rango</th>
+                                    <th>Ejemplo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>byte</code></td>
+                                    <td>8 bits</td>
+                                    <td>-128 a 127</td>
+                                    <td><code>byte edad = 25;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>short</code></td>
+                                    <td>16 bits</td>
+                                    <td>-32,768 a 32,767</td>
+                                    <td><code>short año = 2024;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>int</code></td>
+                                    <td>32 bits</td>
+                                    <td>-2³¹ a 2³¹-1</td>
+                                    <td><code>int contador = 100;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>long</code></td>
+                                    <td>64 bits</td>
+                                    <td>-2⁶³ a 2⁶³-1</td>
+                                    <td><code>long poblacion = 7800000000L;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>float</code></td>
+                                    <td>32 bits</td>
+                                    <td>6-7 dígitos decimales</td>
+                                    <td><code>float precio = 19.99f;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>double</code></td>
+                                    <td>64 bits</td>
+                                    <td>15 dígitos decimales</td>
+                                    <td><code>double pi = 3.14159265359;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>char</code></td>
+                                    <td>16 bits</td>
+                                    <td>Caracteres Unicode</td>
+                                    <td><code>char letra = 'A';</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>boolean</code></td>
+                                    <td>1 bit</td>
+                                    <td>true o false</td>
+                                    <td><code>boolean activo = true;</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="subsection-title">Ejemplo Completo</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="keyword">public class</span> <span class="class-name">TiposDatos</span> {
+    <span class="keyword">public static void</span> <span class="function">main</span>(<span class="class-name">String</span>[] args) {
+        <span class="comment">// Números enteros</span>
+        <span class="keyword">int</span> edad = <span class="number">25</span>;
+        <span class="keyword">long</span> habitantes = <span class="number">8000000000L</span>;
+        
+        <span class="comment">// Números decimales</span>
+        <span class="keyword">double</span> precio = <span class="number">99.99</span>;
+        <span class="keyword">float</span> temperatura = <span class="number">36.5f</span>;
+        
+        <span class="comment">// Caracteres y booleanos</span>
+        <span class="keyword">char</span> inicial = <span class="string">'J'</span>;
+        <span class="keyword">boolean</span> esEstudiante = <span class="keyword">true</span>;
+        
+        <span class="comment">// Strings (tipo referencia)</span>
+        <span class="class-name">String</span> nombre = <span class="string">"Juan Pérez"</span>;
+        
+        <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"Nombre: "</span> + nombre);
+        <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"Edad: "</span> + edad);
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Operadores -->
+            <article id="operadores" class="section">
+                <h2 class="section-title">Operadores</h2>
+                <div class="content-block">
+                    <h3 class="subsection-title">Operadores Aritméticos</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="keyword">int</span> a = <span class="number">10</span>, b = <span class="number">3</span>;
+
+<span class="keyword">int</span> suma = a + b;        <span class="comment">// 13</span>
+<span class="keyword">int</span> resta = a - b;       <span class="comment">// 7</span>
+<span class="keyword">int</span> multiplicacion = a * b; <span class="comment">// 30</span>
+<span class="keyword">int</span> division = a / b;    <span class="comment">// 3</span>
+<span class="keyword">int</span> modulo = a % b;      <span class="comment">// 1</span>
+
+<span class="comment">// Incremento y decremento</span>
+a++;  <span class="comment">// a = 11</span>
+b--;  <span class="comment">// b = 2</span></code></pre>
+                    </div>
+
+                    <h3 class="subsection-title">Operadores de Comparación</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="keyword">int</span> x = <span class="number">5</span>, y = <span class="number">10</span>;
+
+<span class="keyword">boolean</span> igual = (x == y);        <span class="comment">// false</span>
+<span class="keyword">boolean</span> diferente = (x != y);    <span class="comment">// true</span>
+<span class="keyword">boolean</span> mayor = (x > y);         <span class="comment">// false</span>
+<span class="keyword">boolean</span> menor = (x < y);         <span class="comment">// true</span>
+<span class="keyword">boolean</span> mayorIgual = (x >= y);   <span class="comment">// false</span>
+<span class="keyword">boolean</span> menorIgual = (x <= y);   <span class="comment">// true</span></code></pre>
+                    </div>
+
+                    <h3 class="subsection-title">Operadores Lógicos</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="keyword">boolean</span> a = <span class="keyword">true</span>, b = <span class="keyword">false</span>;
+
+<span class="keyword">boolean</span> and = a && b;  <span class="comment">// false (AND)</span>
+<span class="keyword">boolean</span> or = a || b;   <span class="comment">// true (OR)</span>
+<span class="keyword">boolean</span> not = !a;      <span class="comment">// false (NOT)</span></code></pre>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Control de Flujo -->
+            <article id="control-flujo" class="section">
+                <h2 class="section-title">Control de Flujo</h2>
+                <div class="content-block">
+                    <h3 class="subsection-title">If-Else</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="keyword">int</span> edad = <span class="number">18</span>;
+
+<span class="keyword">if</span> (edad >= <span class="number">18</span>) {
+    <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"Eres mayor de edad"</span>);
+} <span class="keyword">else if</span> (edad >= <span class="number">13</span>) {
+    <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"Eres adolescente"</span>);
+} <span class="keyword">else</span> {
+    <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"Eres menor de edad"</span>);
+}</code></pre>
+                    </div>
+
+                    <h3 class="subsection-title">Switch</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="keyword">int</span> dia = <span class="number">3</span>;
+<span class="class-name">String</span> nombreDia;
+
+<span class="keyword">switch</span> (dia) {
+    <span class="keyword">case</span> <span class="number">1</span>:
+        nombreDia = <span class="string">"Lunes"</span>;
+        <span class="keyword">break</span>;
+    <span class="keyword">case</span> <span class="number">2</span>:
+        nombreDia = <span class="string">"Martes"</span>;
+        <span class="keyword">break</span>;
+    <span class="keyword">case</span> <span class="number">3</span>:
+        nombreDia = <span class="string">"Miércoles"</span>;
+        <span class="keyword">break</span>;
+    <span class="keyword">default</span>:
+        nombreDia = <span class="string">"Día inválido"</span>;
+}
+
+<span class="class-name">System</span>.out.<span class="function">println</span>(nombreDia);</code></pre>
+                    </div>
+
+                    <h3 class="subsection-title">Bucle For</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="comment">// For tradicional</span>
+<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < <span class="number">5</span>; i++) {
+    <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"Iteración: "</span> + i);
+}
+
+<span class="comment">// For-each</span>
+<span class="keyword">int</span>[] numeros = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>};
+<span class="keyword">for</span> (<span class="keyword">int</span> num : numeros) {
+    <span class="class-name">System</span>.out.<span class="function">println</span>(num);
+}</code></pre>
+                    </div>
+
+                    <h3 class="subsection-title">Bucle While y Do-While</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="comment">// While</span>
+<span class="keyword">int</span> contador = <span class="number">0</span>;
+<span class="keyword">while</span> (contador < <span class="number">5</span>) {
+    <span class="class-name">System</span>.out.<span class="function">println</span>(contador);
+    contador++;
+}
+
+<span class="comment">// Do-While (se ejecuta al menos una vez)</span>
+<span class="keyword">int</span> x = <span class="number">0</span>;
+<span class="keyword">do</span> {
+    <span class="class-name">System</span>.out.<span class="function">println</span>(x);
+    x++;
+} <span class="keyword">while</span> (x < <span class="number">5</span>);</code></pre>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Arrays -->
+            <article id="arrays" class="section">
+                <h2 class="section-title">Arrays</h2>
+                <div class="content-block">
+                    <p>Los arrays en Java son estructuras de datos que almacenan múltiples valores del mismo tipo.</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="comment">// Declaración e inicialización</span>
+<span class="keyword">int</span>[] numeros = <span class="keyword">new int</span>[<span class="number">5</span>];  <span class="comment">// Array de tamaño 5</span>
+<span class="keyword">int</span>[] valores = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>};  <span class="comment">// Inicialización directa</span>
+
+<span class="comment">// Acceso a elementos</span>
+numeros[<span class="number">0</span>] = <span class="number">10</span>;
+<span class="keyword">int</span> primerValor = valores[<span class="number">0</span>];  <span class="comment">// 1</span>
+
+<span class="comment">// Longitud del array</span>
+<span class="keyword">int</span> longitud = valores.length;  <span class="comment">// 5</span>
+
+<span class="comment">// Arrays multidimensionales</span>
+<span class="keyword">int</span>[][] matriz = {
+    {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>},
+    {<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>},
+    {<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>}
+};
+
+<span class="comment">// Recorrer array</span>
+<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < valores.length; i++) {
+    <span class="class-name">System</span>.out.<span class="function">println</span>(valores[i]);
+}</code></pre>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Clases y Objetos -->
+            <article id="clases-objetos" class="section">
+                <h2 class="section-title">Clases y Objetos</h2>
+                <div class="content-block">
+                    <p>Java es un lenguaje orientado a objetos. Una clase es un molde para crear objetos.</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="keyword">public class</span> <span class="class-name">Persona</span> {
+    <span class="comment">// Atributos (variables de instancia)</span>
+    <span class="keyword">private</span> <span class="class-name">String</span> nombre;
+    <span class="keyword">private</span> <span class="keyword">int</span> edad;
+    
+    <span class="comment">// Constructor</span>
+    <span class="keyword">public</span> <span class="function">Persona</span>(<span class="class-name">String</span> nombre, <span class="keyword">int</span> edad) {
+        <span class="keyword">this</span>.nombre = nombre;
+        <span class="keyword">this</span>.edad = edad;
+    }
+    
+    <span class="comment">// Métodos (getters)</span>
+    <span class="keyword">public</span> <span class="class-name">String</span> <span class="function">getNombre</span>() {
+        <span class="keyword">return</span> nombre;
+    }
+    
+    <span class="keyword">public</span> <span class="keyword">int</span> <span class="function">getEdad</span>() {
+        <span class="keyword">return</span> edad;
+    }
+    
+    <span class="comment">// Métodos (setters)</span>
+    <span class="keyword">public void</span> <span class="function">setNombre</span>(<span class="class-name">String</span> nombre) {
+        <span class="keyword">this</span>.nombre = nombre;
+    }
+    
+    <span class="keyword">public void</span> <span class="function">setEdad</span>(<span class="keyword">int</span> edad) {
+        <span class="keyword">this</span>.edad = edad;
+    }
+    
+    <span class="comment">// Método personalizado</span>
+    <span class="keyword">public void</span> <span class="function">presentarse</span>() {
+        <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"Hola, soy "</span> + nombre + 
+                           <span class="string">" y tengo "</span> + edad + <span class="string">" años"</span>);
+    }
+}
+
+<span class="comment">// Uso de la clase</span>
+<span class="keyword">public class</span> <span class="class-name">Main</span> {
+    <span class="keyword">public static void</span> <span class="function">main</span>(<span class="class-name">String</span>[] args) {
+        <span class="comment">// Crear objetos</span>
+        <span class="class-name">Persona</span> persona1 = <span class="keyword">new</span> <span class="class-name">Persona</span>(<span class="string">"Juan"</span>, <span class="number">25</span>);
+        <span class="class-name">Persona</span> persona2 = <span class="keyword">new</span> <span class="class-name">Persona</span>(<span class="string">"María"</span>, <span class="number">30</span>);
+        
+        <span class="comment">// Usar métodos</span>
+        persona1.<span class="function">presentarse</span>();
+        persona2.<span class="function">presentarse</span>();
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Herencia -->
+            <article id="herencia" class="section">
+                <h2 class="section-title">Herencia</h2>
+                <div class="content-block">
+                    <p>La herencia permite que una clase herede propiedades y métodos de otra clase.</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="comment">// Clase padre (superclase)</span>
+<span class="keyword">public class</span> <span class="class-name">Animal</span> {
+    <span class="keyword">protected</span> <span class="class-name">String</span> nombre;
+    
+    <span class="keyword">public</span> <span class="function">Animal</span>(<span class="class-name">String</span> nombre) {
+        <span class="keyword">this</span>.nombre = nombre;
+    }
+    
+    <span class="keyword">public void</span> <span class="function">hacerSonido</span>() {
+        <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"El animal hace un sonido"</span>);
+    }
+}
+
+<span class="comment">// Clase hija (subclase)</span>
+<span class="keyword">public class</span> <span class="class-name">Perro</span> <span class="keyword">extends</span> <span class="class-name">Animal</span> {
+    <span class="keyword">private</span> <span class="class-name">String</span> raza;
+    
+    <span class="keyword">public</span> <span class="function">Perro</span>(<span class="class-name">String</span> nombre, <span class="class-name">String</span> raza) {
+        <span class="keyword">super</span>(nombre);  <span class="comment">// Llama al constructor de la clase padre</span>
+        <span class="keyword">this</span>.raza = raza;
+    }
+    
+    <span class="comment">// Sobrescribir método</span>
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> <span class="function">hacerSonido</span>() {
+        <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"¡Guau guau!"</span>);
+    }
+    
+    <span class="keyword">public void</span> <span class="function">mostrarInfo</span>() {
+        <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"Nombre: "</span> + nombre + <span class="string">", Raza: "</span> + raza);
+    }
+}
+
+<span class="comment">// Uso</span>
+<span class="class-name">Perro</span> miPerro = <span class="keyword">new</span> <span class="class-name">Perro</span>(<span class="string">"Rex"</span>, <span class="string">"Labrador"</span>);
+miPerro.<span class="function">hacerSonido</span>();  <span class="comment">// ¡Guau guau!</span>
+miPerro.<span class="function">mostrarInfo</span>();</code></pre>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Interfaces -->
+            <article id="interfaces" class="section">
+                <h2 class="section-title">Interfaces</h2>
+                <div class="content-block">
+                    <p>Las interfaces definen un contrato que las clases deben implementar.</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="comment">// Definir interfaz</span>
+<span class="keyword">public interface</span> <span class="class-name">Volador</span> {
+    <span class="keyword">void</span> <span class="function">volar</span>();
+    <span class="keyword">void</span> <span class="function">aterrizar</span>();
+}
+
+<span class="comment">// Implementar interfaz</span>
+<span class="keyword">public class</span> <span class="class-name">Pajaro</span> <span class="keyword">implements</span> <span class="class-name">Volador</span> {
+    <span class="keyword">private</span> <span class="class-name">String</span> nombre;
+    
+    <span class="keyword">public</span> <span class="function">Pajaro</span>(<span class="class-name">String</span> nombre) {
+        <span class="keyword">this</span>.nombre = nombre;
+    }
+    
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> <span class="function">volar</span>() {
+        <span class="class-name">System</span>.out.<span class="function">println</span>(nombre + <span class="string">" está volando"</span>);
+    }
+    
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> <span class="function">aterrizar</span>() {
+        <span class="class-name">System</span>.out.<span class="function">println</span>(nombre + <span class="string">" ha aterrizado"</span>);
+    }
+}
+
+<span class="comment">// Uso</span>
+<span class="class-name">Volador</span> miPajaro = <span class="keyword">new</span> <span class="class-name">Pajaro</span>(<span class="string">"Águila"</span>);
+miPajaro.<span class="function">volar</span>();
+miPajaro.<span class="function">aterrizar</span>();</code></pre>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Colecciones -->
+            <article id="colecciones" class="section">
+                <h2 class="section-title">Colecciones (Collections Framework)</h2>
+                <div class="content-block">
+                    <p>El Framework de Colecciones de Java proporciona estructuras de datos eficientes.</p>
+
+                    <h3 class="subsection-title">ArrayList</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="keyword">import</span> java.util.<span class="class-name">ArrayList</span>;
+
+<span class="class-name">ArrayList</span><<span class="class-name">String</span>> nombres = <span class="keyword">new</span> <span class="class-name">ArrayList</span><<span class="class-name">String</span>>();
+
+<span class="comment">// Agregar elementos</span>
+nombres.<span class="function">add</span>(<span class="string">"Juan"</span>);
+nombres.<span class="function">add</span>(<span class="string">"María"</span>);
+nombres.<span class="function">add</span>(<span class="string">"Pedro"</span>);
+
+<span class="comment">// Acceder a elementos</span>
+<span class="class-name">String</span> primero = nombres.<span class="function">get</span>(<span class="number">0</span>);  <span class="comment">// "Juan"</span>
+
+<span class="comment">// Tamaño</span>
+<span class="keyword">int</span> tamaño = nombres.<span class="function">size</span>();  <span class="comment">// 3</span>
+
+<span class="comment">// Eliminar elemento</span>
+nombres.<span class="function">remove</span>(<span class="string">"María"</span>);
+
+<span class="comment">// Recorrer</span>
+<span class="keyword">for</span> (<span class="class-name">String</span> nombre : nombres) {
+    <span class="class-name">System</span>.out.<span class="function">println</span>(nombre);
+}</code></pre>
+                    </div>
+
+                    <h3 class="subsection-title">HashMap</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="keyword">import</span> java.util.<span class="class-name">HashMap</span>;
+
+<span class="class-name">HashMap</span><<span class="class-name">String</span>, <span class="class-name">Integer</span>> edades = <span class="keyword">new</span> <span class="class-name">HashMap</span><<span class="class-name">String</span>, <span class="class-name">Integer</span>>();
+
+<span class="comment">// Agregar pares clave-valor</span>
+edades.<span class="function">put</span>(<span class="string">"Juan"</span>, <span class="number">25</span>);
+edades.<span class="function">put</span>(<span class="string">"María"</span>, <span class="number">30</span>);
+edades.<span class="function">put</span>(<span class="string">"Pedro"</span>, <span class="number">28</span>);
+
+<span class="comment">// Obtener valor</span>
+<span class="keyword">int</span> edadJuan = edades.<span class="function">get</span>(<span class="string">"Juan"</span>);  <span class="comment">// 25</span>
+
+<span class="comment">// Verificar si existe una clave</span>
+<span class="keyword">boolean</span> existe = edades.<span class="function">containsKey</span>(<span class="string">"María"</span>);  <span class="comment">// true</span>
+
+<span class="comment">// Recorrer</span>
+<span class="keyword">for</span> (<span class="class-name">String</span> nombre : edades.<span class="function">keySet</span>()) {
+    <span class="class-name">System</span>.out.<span class="function">println</span>(nombre + <span class="string">": "</span> + edades.<span class="function">get</span>(nombre));
+}</code></pre>
+                    </div>
+
+                    <h3 class="subsection-title">HashSet</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="keyword">import</span> java.util.<span class="class-name">HashSet</span>;
+
+<span class="class-name">HashSet</span><<span class="class-name">String</span>> frutas = <span class="keyword">new</span> <span class="class-name">HashSet</span><<span class="class-name">String</span>>();
+
+<span class="comment">// Agregar elementos (no permite duplicados)</span>
+frutas.<span class="function">add</span>(<span class="string">"Manzana"</span>);
+frutas.<span class="function">add</span>(<span class="string">"Banana"</span>);
+frutas.<span class="function">add</span>(<span class="string">"Manzana"</span>);  <span class="comment">// No se agrega, ya existe</span>
+
+<span class="comment">// Verificar si contiene</span>
+<span class="keyword">boolean</span> tiene = frutas.<span class="function">contains</span>(<span class="string">"Banana"</span>);  <span class="comment">// true</span>
+
+<span class="class-name">System</span>.out.<span class="function">println</span>(frutas.<span class="function">size</span>());  <span class="comment">// 2</span></code></pre>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Excepciones -->
+            <article id="excepciones" class="section">
+                <h2 class="section-title">Manejo de Excepciones</h2>
+                <div class="content-block">
+                    <p>Las excepciones permiten manejar errores durante la ejecución del programa.</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="keyword">try</span> {
+    <span class="keyword">int</span>[] numeros = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>};
+    <span class="class-name">System</span>.out.<span class="function">println</span>(numeros[<span class="number">5</span>]);  <span class="comment">// Error: índice fuera de rango</span>
+    
+    <span class="keyword">int</span> division = <span class="number">10</span> / <span class="number">0</span>;  <span class="comment">// Error: división por cero</span>
+    
+} <span class="keyword">catch</span> (<span class="class-name">ArrayIndexOutOfBoundsException</span> e) {
+    <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"Error: Índice fuera de rango"</span>);
+    
+} <span class="keyword">catch</span> (<span class="class-name">ArithmeticException</span> e) {
+    <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"Error: División por cero"</span>);
+    
+} <span class="keyword">catch</span> (<span class="class-name">Exception</span> e) {
+    <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"Error general: "</span> + e.<span class="function">getMessage</span>());
+    
+} <span class="keyword">finally</span> {
+    <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"Bloque finally siempre se ejecuta"</span>);
+}
+
+<span class="comment">// Lanzar excepciones personalizadas</span>
+<span class="keyword">public void</span> <span class="function">verificarEdad</span>(<span class="keyword">int</span> edad) <span class="keyword">throws</span> <span class="class-name">Exception</span> {
+    <span class="keyword">if</span> (edad < <span class="number">18</span>) {
+        <span class="keyword">throw new</span> <span class="class-name">Exception</span>(<span class="string">"Debe ser mayor de 18 años"</span>);
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Lambda Expressions -->
+            <article id="lambda" class="section">
+                <h2 class="section-title">Expresiones Lambda</h2>
+                <div class="content-block">
+                    <p>Las expresiones lambda permiten escribir código más conciso y funcional (Java 8+).</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="keyword">import</span> java.util.<span class="class-name">ArrayList</span>;
+<span class="keyword">import</span> java.util.<span class="class-name">Collections</span>;
+
+<span class="comment">// Sin lambda (forma tradicional)</span>
+<span class="class-name">Collections</span>.<span class="function">sort</span>(nombres, <span class="keyword">new</span> <span class="class-name">Comparator</span><<span class="class-name">String</span>>() {
+    <span class="annotation">@Override</span>
+    <span class="keyword">public int</span> <span class="function">compare</span>(<span class="class-name">String</span> s1, <span class="class-name">String</span> s2) {
+        <span class="keyword">return</span> s1.<span class="function">compareTo</span>(s2);
+    }
+});
+
+<span class="comment">// Con lambda (forma moderna)</span>
+<span class="class-name">Collections</span>.<span class="function">sort</span>(nombres, (s1, s2) -> s1.<span class="function">compareTo</span>(s2));
+
+<span class="comment">// Recorrer con forEach y lambda</span>
+<span class="class-name">ArrayList</span><<span class="class-name">Integer</span>> numeros = <span class="keyword">new</span> <span class="class-name">ArrayList</span><<span class="class-name">Integer</span>>();
+numeros.<span class="function">add</span>(<span class="number">5</span>);
+numeros.<span class="function">add</span>(<span class="number">10</span>);
+numeros.<span class="function">add</span>(<span class="number">15</span>);
+
+numeros.<span class="function">forEach</span>(n -> <span class="class-name">System</span>.out.<span class="function">println</span>(n));
+
+<span class="comment">// Filtrar con Streams y lambda</span>
+numeros.<span class="function">stream</span>()
+       .<span class="function">filter</span>(n -> n > <span class="number">7</span>)
+       .<span class="function">forEach</span>(<span class="class-name">System</span>.out::println);</code></pre>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Streams API -->
+            <article id="streams" class="section">
+                <h2 class="section-title">Streams API</h2>
+                <div class="content-block">
+                    <p>La API de Streams permite procesar colecciones de datos de forma funcional (Java 8+).</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="keyword">import</span> java.util.<span class="class-name">Arrays</span>;
+<span class="keyword">import</span> java.util.<span class="class-name">List</span>;
+<span class="keyword">import</span> java.util.stream.<span class="class-name">Collectors</span>;
+
+<span class="class-name">List</span><<span class="class-name">Integer</span>> numeros = <span class="class-name">Arrays</span>.<span class="function">asList</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>);
+
+<span class="comment">// Filtrar números pares</span>
+<span class="class-name">List</span><<span class="class-name">Integer</span>> pares = numeros.<span class="function">stream</span>()
+    .<span class="function">filter</span>(n -> n % <span class="number">2</span> == <span class="number">0</span>)
+    .<span class="function">collect</span>(<span class="class-name">Collectors</span>.<span class="function">toList</span>());
+
+<span class="comment">// Transformar con map</span>
+<span class="class-name">List</span><<span class="class-name">Integer</span>> cuadrados = numeros.<span class="function">stream</span>()
+    .<span class="function">map</span>(n -> n * n)
+    .<span class="function">collect</span>(<span class="class-name">Collectors</span>.<span class="function">toList</span>());
+
+<span class="comment">// Sumar todos los números</span>
+<span class="keyword">int</span> suma = numeros.<span class="function">stream</span>()
+    .<span class="function">reduce</span>(<span class="number">0</span>, (a, b) -> a + b);
+
+<span class="comment">// Operaciones encadenadas</span>
+<span class="keyword">int</span> resultado = numeros.<span class="function">stream</span>()
+    .<span class="function">filter</span>(n -> n > <span class="number">5</span>)
+    .<span class="function">map</span>(n -> n * <span class="number">2</span>)
+    .<span class="function">reduce</span>(<span class="number">0</span>, <span class="class-name">Integer</span>::sum);
+
+<span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"Resultado: "</span> + resultado);</code></pre>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Multithreading -->
+            <article id="multithreading" class="section">
+                <h2 class="section-title">Multithreading (Hilos)</h2>
+                <div class="content-block">
+                    <p>Java permite ejecutar múltiples tareas simultáneamente usando hilos.</p>
+
+                    <h3 class="subsection-title">Extendiendo Thread</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="keyword">class</span> <span class="class-name">MiHilo</span> <span class="keyword">extends</span> <span class="class-name">Thread</span> {
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> <span class="function">run</span>() {
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < <span class="number">5</span>; i++) {
+            <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"Hilo: "</span> + i);
+            <span class="keyword">try</span> {
+                <span class="class-name">Thread</span>.<span class="function">sleep</span>(<span class="number">1000</span>);  <span class="comment">// Pausa 1 segundo</span>
+            } <span class="keyword">catch</span> (<span class="class-name">InterruptedException</span> e) {
+                e.<span class="function">printStackTrace</span>();
+            }
+        }
+    }
+}
+
+<span class="comment">// Uso</span>
+<span class="class-name">MiHilo</span> hilo = <span class="keyword">new</span> <span class="class-name">MiHilo</span>();
+hilo.<span class="function">start</span>();</code></pre>
+                    </div>
+
+                    <h3 class="subsection-title">Implementando Runnable</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">java</span>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                        <pre><code><span class="keyword">class</span> <span class="class-name">MiTarea</span> <span class="keyword">implements</span> <span class="class-name">Runnable</span> {
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> <span class="function">run</span>() {
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < <span class="number">5</span>; i++) {
+            <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"Tarea: "</span> + i);
+        }
+    }
+}
+
+<span class="comment">// Uso</span>
+<span class="class-name">Thread</span> hilo = <span class="keyword">new</span> <span class="class-name">Thread</span>(<span class="keyword">new</span> <span class="class-name">MiTarea</span>());
+hilo.<span class="function">start</span>();
+
+<span class="comment">// Con lambda</span>
+<span class="class-name">Thread</span> hiloLambda = <span class="keyword">new</span> <span class="class-name">Thread</span>(() -> {
+    <span class="class-name">System</span>.out.<span class="function">println</span>(<span class="string">"Ejecutando en un hilo con lambda"</span>);
+});
+hiloLambda.<span class="function">start</span>();</code></pre>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Footer / Recursos -->
+            <article class="section">
+                <h2 class="section-title">Recursos Adicionales</h2>
+                <div class="content-block">
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <h3>Documentación Oficial</h3>
+                            <p>Documentación completa de Oracle Java</p>
+                            <a href="https://docs.oracle.com/en/java/" target="_blank" class="resource-link">Visitar →</a>
+                        </div>
+                        <div class="resource-card">
+                            <h3>Java Tutorials</h3>
+                            <p>Tutoriales oficiales de Oracle</p>
+                            <a href="https://docs.oracle.com/javase/tutorial/" target="_blank" class="resource-link">Visitar →</a>
+                        </div>
+                        <div class="resource-card">
+                            <h3>Practice Coding</h3>
+                            <p>Practica con ejercicios interactivos</p>
+                            <a href="https://www.hackerrank.com/domains/java" target="_blank" class="resource-link">Visitar →</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <!-- Table of Contents (Right Sidebar) -->
+        <aside class="toc">
+            <div class="toc-title">En esta página</div>
+            <nav class="toc-nav" id="tocNav">
+                <!-- Se genera dinámicamente con JavaScript -->
+            </nav>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
